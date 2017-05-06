@@ -1,0 +1,11 @@
+*~
+.DS_Store
+target
+.idea
+*.iml
+rebel-remote.xml
+rebel.xml
+.*.swp
+*.class
+*.versionsBackup
+*.releaseBackup
