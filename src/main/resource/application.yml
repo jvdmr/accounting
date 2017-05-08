@@ -1,0 +1,31 @@
+spring:
+  jpa:
+    show-sql: true
+    hibernate:
+      naming_strategy: org.hibernate.cfg.ImprovedNamingStrategy
+      ddl-auto: validate
+    database: H2
+  datasource:
+    url: jdbc:h2:/tmp/accounting.tmp;AUTO_SERVER=TRUE;DB_CLOSE_ON_EXIT=FALSE
+    driver-class-name: org.h2.Driver
+    username: sa
+    password: sa
+  thymeleaf:
+    cache: false
+    prefix: classpath:/templates
+server:
+  port: 8080
+---
+spring:
+  profiles: production
+  jpa:
+    show-sql: false
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL5Dialect
+  datasource:
+    url: jdbc:mysql://database/accounting_prd
+    driver-class-name: com.mysql.jdbc.Driver
+    username: accounting_prd
+server:
+  port: 8080
